@@ -1,58 +1,54 @@
-import { motion } from 'framer-motion';
-import { 
-  SiCplusplus,
-  SiHtml5,
-  SiCss3,
-  SiJavascript,
-  SiReact,
-  SiTailwindcss,
-  SiNodedotjs,
-  SiExpress
-} from 'react-icons/si';
-import { FaJava } from 'react-icons/fa'; 
 
+import {
+  SiMongodb, SiExpress, SiReact, SiNodedotjs,
+  SiJavascript, SiCplusplus, SiPython
+} from "react-icons/si";
+import { DiJava } from "react-icons/di";
+
+
+function Skills({ loaded, iconSize = 32 }) {
 const skills = [
-  { name: 'C++', icon: <SiCplusplus size={24} /> },
-  { name: 'Java', icon: <FaJava size={24} /> }, 
-  { name: 'JavaScript', icon: <SiJavascript size={24} /> },
-  { name: 'React', icon: <SiReact size={24} /> },
-  { name: 'Tailwind', icon: <SiTailwindcss size={24} /> },
-  { name: 'Node.js', icon: <SiNodedotjs size={24} /> },
-  { name: 'Express.js', icon: <SiExpress size={24} /> }
+  { name: 'MongoDB', color: 'from-green-500 to-green-700', icon: <SiMongodb /> },
+  { name: 'Express.js', color: 'from-zinc-400 to-zinc-600', icon: <SiExpress /> },
+  { name: 'React', color: 'from-blue-400 to-blue-600', icon: <SiReact /> },
+  { name: 'Node.js', color: 'from-green-400 to-green-600', icon: <SiNodedotjs /> },
+  { name: 'JavaScript', color: 'from-yellow-400 to-yellow-600', icon: <SiJavascript /> },
+  { name: 'C++', color: 'from-sky-400 to-sky-600', icon: <SiCplusplus /> },
+{ name: 'Java', color: 'from-red-400 to-orange-500', icon: <DiJava /> },
+ { name: 'Python', color: 'from-yellow-500 to-blue-500', icon: <SiPython /> }
 ];
-const Skills = ({ loaded }) => {
-  return (
-  <motion.div
-  initial={{ opacity: 0 }}
-  animate={loaded ? { opacity: 1 } : {}}
-  transition={{ duration: 0.8, delay: 0.6 }}
-  className="mt-20"
->
-  <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-8 text-center">
-    Skills
-  </h2>
-  <div className="flex flex-wrap justify-center gap-6">
-    {skills.map((skill, index) => (
-      <motion.div
-        key={index}
-        initial={{ opacity: 0, y: 20 }}
-        animate={loaded ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-        whileHover={{ scale: 1.1 }}
-        className="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition duration-300 w-24"
-      >
-        <div className="text-2xl mb-2 text-indigo-600 dark:text-indigo-400">
-          {skill.icon}
-        </div>
-        <span className="text-sm font-medium text-gray-700 dark:text-gray-300 text-center">
-          {skill.name}
-        </span>
-      </motion.div>
-    ))}
-  </div>
-</motion.div>
 
+
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      {skills.map((skill, index) => (
+        <div
+          key={skill.name}
+          className={`transform transition-all duration-700 hover:scale-105 ${
+            loaded ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
+          }`}
+          style={{ transitionDelay: `${1000 + index * 100}ms` }}
+        >
+          <div className="group relative p-6 bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 hover:border-indigo-500/50 transition-all duration-300 cursor-pointer">
+            <div
+              className={`absolute inset-0 bg-gradient-to-r ${skill.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`}
+            />
+            <div className="text-center space-y-3">
+              <div
+                className="transform group-hover:scale-110 transition-transform duration-300"
+                style={{ fontSize: iconSize }}
+              >
+                {skill.icon}
+              </div>
+              <h4 className="text-white font-medium group-hover:text-indigo-400 transition-colors duration-300">
+                {skill.name}
+              </h4>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
   );
-};
+}
 
 export default Skills;

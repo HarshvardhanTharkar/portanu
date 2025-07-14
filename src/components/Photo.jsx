@@ -1,23 +1,27 @@
-import { motion } from 'framer-motion';
-import harshImg from '../assets/harsh.jpg'; // correct import path
+import harshImg from '../assets/harsh.jpg';
 
-const Photo = ({ loaded }) => {
+function Photo({ loaded }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={loaded ? { opacity: 1, scale: 1 } : {}}
-      transition={{ duration: 0.8, delay: 0.2 }}
-      className="relative"
+    <div
+      className={`w-full h-full transform transition-all duration-1000 delay-600 ${
+        loaded ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
+      }`}
     >
-      <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-2xl">
-        <img
-          src={harshImg}
-          alt="Harshvardhan Tharkar"
-          className="w-full h-full object-cover"
-        />
+      <div className="w-full h-full bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-full flex items-center justify-center relative overflow-hidden group">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-400/20 to-pink-400/20 rounded-full animate-pulse"></div>
+
+        <div className="w-4/5 h-4/5 bg-gray-800 rounded-full flex items-center justify-center relative z-10 group-hover:scale-105 transition-transform duration-300 overflow-hidden">
+          <img
+            src={harshImg}
+            alt="Harshvardhan"
+            className="w-full h-full object-cover rounded-full"
+          />
+        </div>
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-full"></div>
       </div>
-    </motion.div>
+    </div>
   );
-};
+}
 
 export default Photo;

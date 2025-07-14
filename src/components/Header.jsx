@@ -1,27 +1,28 @@
-import { motion } from 'framer-motion';
-
-const Header = ({ loaded }) => {
+function Header({ loaded }) {
   return (
-    <div className="space-y-4">
-      <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={loaded ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8 }}
-        className="text-5xl font-bold text-gray-900 dark:text-white tracking-tight"
+    <div className="space-y-6">
+      <div
+        className={`transform transition-all duration-1000 delay-200 ${
+          loaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+        }`}
       >
-        Harshvardhan Uttam Tharkar
-      </motion.h1>
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-black bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight tracking-tight">
+          Harshvardhan Uttam Tharkar
 
-      <motion.h2
-        initial={{ opacity: 0, y: -10 }}
-        animate={loaded ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="text-2xl font-medium text-gray-700 dark:text-gray-300 tracking-tight"
+        </h1>
+      </div>
+
+      <div
+        className={`transform transition-all duration-1000 delay-400 ${
+          loaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+        }`}
       >
-        Software Developer
-      </motion.h2>
+        <h2 className="text-xl md:text-2xl text-gray-300 font-light tracking-wide">
+       Software Developer
+        </h2>
+      </div>
     </div>
   );
-};
+}
 
 export default Header;
