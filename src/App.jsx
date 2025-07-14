@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Bio from './components/Bio';
 import Photo from './components/Photo';
 import Skills from './components/Skills';
+
 import Contact from './components/Contact';
 
 function FloatingParticles() {
