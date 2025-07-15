@@ -7,7 +7,7 @@ function Header({ loaded }) {
         }`}
       >
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-black bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight tracking-tight">
-          Harshvardhan Uttam Tharkar
+      Anushka Anand Asode
 
         </h1>
       </div>
@@ -18,7 +18,7 @@ function Header({ loaded }) {
         }`}
       >
         <h2 className="text-xl md:text-2xl text-gray-300 font-light tracking-wide">
-       Software Developer
+       Software Development Engineer
         </h2>
       </div>
     </div>

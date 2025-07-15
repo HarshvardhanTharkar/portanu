@@ -8,7 +8,8 @@ function Bio({ loaded }) {
       }`}
     >
       <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light">
-        I'm Harshvardhan Tharkar — someone who's deeply passionate about technology, creativity, and meaningful impact. I find joy in building things, solving real-world problems, and constantly exploring new ideas. Whether it's through projects, collaborations, or community work, I strive to grow, learn, and make a difference. Curiosity drives me, and I'm always excited about what’s next.
+        Hi, I'm Anushka Asode , a Software Development Engineer with a passion for solving real-world problems through code.
+I specialize in building scalable web applications, optimizing performance, and writing clean, maintainable code. I believe in breaking barriers — both in tech and in life — and love collaborating to bring meaningful ideas to life.
       </p>
     </div>
   );

@@ -1,4 +1,4 @@
-import harshImg from '../assets/harsh.jpg';
+import harshImg from '../assets/anushka.jpg';
 
 
 function Photo({ loaded }) {
